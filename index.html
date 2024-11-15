@@ -6,12 +6,14 @@
     <title>Turbos Airdrop</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
     <style>
+        /* General Styles */
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #121212;
             color: white;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         header {
@@ -19,7 +21,7 @@
             color: #ff8c00;
             padding: 40px;
             text-align: center;
-            font-size: 3rem;
+            font-size: 2.5rem;
             border-bottom: 2px solid #444;
         }
 
@@ -36,13 +38,17 @@
             cursor: pointer;
             border-radius: 8px;
             transition: background-color 0.3s;
+            width: 100%;
+            max-width: 350px;
+            margin: 10px auto;
         }
 
         .button:hover {
             background-color: #e67e00;
         }
 
-        .problem-section, .wallet-section, .roadmap {
+        /* Section Styles */
+        .section {
             margin-top: 60px;
             padding: 50px;
             border-radius: 10px;
@@ -50,24 +56,19 @@
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.7);
         }
 
-        .problem-section h2, .wallet-section h2, .roadmap h2 {
+        h2 {
             font-size: 2rem;
             text-align: center;
             margin-bottom: 20px;
             color: #ff8c00;
         }
 
-        .problem-section p, .wallet-section p {
+        p, ul {
             font-size: 1.2rem;
             line-height: 1.6;
             color: #bbb;
             text-align: justify;
             margin-bottom: 20px;
-        }
-
-        .roadmap ul {
-            list-style: none;
-            padding: 0;
         }
 
         .roadmap li {
@@ -101,149 +102,4 @@
             border: none;
             border-radius: 8px;
             font-size: 1.3rem;
-            transition: background-color 0.3s;
-        }
-
-        .wallet-section button:hover {
-            background-color: #e67e00;
-        }
-
-        .nft-link {
-            display: inline-block;
-            margin-top: 30px;
-            font-size: 1.2rem;
-            color: #ff8c00;
-            text-decoration: none;
-            text-align: center;
-            padding: 12px 30px;
-            border-radius: 8px;
-            border: 2px solid #ff8c00;
-            transition: all 0.3s ease;
-        }
-
-        .nft-link:hover {
-            background-color: #ff8c00;
-            color: white;
-        }
-
-        .caution {
-            background-color: #d9534f;
-            color: white;
-            padding: 15px;
-            margin-top: 60px;
-            border-radius: 8px;
-            text-align: center;
-            font-size: 1.2rem;
-        }
-
-        footer {
-            background-color: #1a1a1a;
-            text-align: center;
-            padding: 30px;
-            margin-top: 60px;
-            color: #bbb;
-        }
-
-        footer a {
-            color: #ff8c00;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: #ff7a00;
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    Turbos Airdrop
-</header>
-
-<div class="container">
-
-    <!-- Airdrop Registration (Connect Button) -->
-    <div style="text-align: center;">
-        <button class="button" id="connectButton">Connect Wallet for Airdrop</button>
-    </div>
-
-    <!-- Blockchain Problem Section -->
-    <div class="problem-section">
-        <h2>Why Turbos?</h2>
-        <p>
-            The current blockchain landscape is riddled with issues such as high gas fees, slow transaction times, and scalability bottlenecks. These challenges hinder the growth and adoption of decentralized technologies in the mainstream. Turbos solves this problem by leveraging a high-speed, low-fee blockchain that ensures quick, secure transactions, enabling mass adoption of decentralized applications.
-        </p>
-        <p>
-            With our innovative consensus model and cutting-edge architecture, Turbos allows seamless interaction with dApps, enhanced interoperability across blockchains, and a user-friendly environment for crypto enthusiasts and developers alike.
-        </p>
-    </div>
-
-    <!-- Turbos Wallet Section -->
-    <div class="wallet-section">
-        <h2>Introducing the Turbos Wallet</h2>
-        <p>
-            The Turbos Wallet is the ultimate solution for managing your assets within the Turbos ecosystem. Designed for both beginners and seasoned crypto users, it offers:
-        </p>
-        <ul>
-            <li>Low transaction fees</li>
-            <li>Cross-chain compatibility</li>
-            <li>Fast and secure transactions</li>
-            <li>User-friendly interface</li>
-        </ul>
-        <button id="downloadWalletButton">Download Turbos Wallet</button>
-    </div>
-
-    <!-- Project Roadmap Section -->
-    <div class="roadmap">
-        <h2>Project Roadmap</h2>
-        <ul>
-            <li>
-                Phase 1: Airdrop and Community Growth
-                <span>Q1 2024</span>
-            </li>
-            <li>
-                Phase 2: Wallet Launch and Cross-Chain Integration
-                <span>Q2 2024</span>
-            </li>
-            <li>
-                Phase 3: Turbos Blockchain Mainnet Launch
-                <span>Q3 2024</span>
-            </li>
-            <li>
-                Phase 4: Partnership Announcements and Exchange Listings
-                <span>Q4 2024</span>
-            </li>
-        </ul>
-    </div>
-
-    <!-- Link to NFT Page -->
-    <div style="text-align: center;">
-        <a href="nft-page.html" class="nft-link">Explore Turbos NFT Collection</a>
-    </div>
-
-    <!-- Cautionary Advice -->
-    <div class="caution">
-        <p><strong>⚠️ Caution:</strong> Always participate in official airdrops. Avoid sharing private keys and seed phrases with anyone.</p>
-    </div>
-</div>
-
-<!-- Footer -->
-<footer>
-    <p>Contact Us: <a href="mailto:support@turbosairdrop.com">support@turbosairdrop.com</a></p>
-    <p>&copy; 2024 Turbos Airdrop</p>
-</footer>
-
-<script>
-    // Connect Wallet Simulation
-    document.getElementById("connectButton").addEventListener("click", function() {
-        alert("Connecting to wallet... (Simulation)");
-    });
-
-    // Download Wallet Simulation
-    document.getElementById("downloadWalletButton").addEventListener("click", function() {
-        alert("Downloading Turbos Wallet... (Simulation)");
-    });
-</script>
-
-</body>
-</html>
+            transition: background-col
