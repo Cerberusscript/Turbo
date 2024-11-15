@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turbos NFT Collection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+            font-size: 2rem;
+        }
+        .container {
+            text-align: center;
+            padding: 40px;
+        }
+        .carousel {
+            position: relative;
+            width: 80%;
+            margin: 0 auto;
+        }
+        .carousel img {
+            width: 100%;
+            border-radius: 10px;
+            display: none;
+        }
+        .carousel img.active {
+            display: block;
+        }
+        .carousel-button {
+            background-color: #ff8c00;
+            border: none;
+            padding: 15px 30px;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .carousel-button:hover {
+            background-color: #ff7a00;
+        }
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #222;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        .back-link {
+            color: #ff8c00;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            color: #ff7a00;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Turbos NFT Collection
+</header>
+
+<div class="container">
+    <div class="carousel" id="carousel">
+        <!-- Replace these with your actual NFT images -->
+        <img src="https://via.placeholder.com/800x400.png?text=NFT+1" class="active" alt="NFT 1">
+        <img src="https://via.placeholder.com/800x400.png?text=NFT+2" alt="NFT 2">
+        <img src="https://via.placeholder.com/800x400.png?text=NFT+3" alt="NFT 3">
+    </div>
+
+    <button class="carousel-button" id="nextButton">Next NFT</button>
+
+    <p style="margin-top: 20px;">
+        <a href="index.html" class="back-link">Back to Airdrop</a>
+    </p>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>Contact Us: <a href="mailto:support@turbosairdrop.com" style="color: #ff8c00;">support@turbosairdrop.com</a></p>
+    <p>&copy; 2024 Turbos Airdrop</p>
+</footer>
+
+<script>
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.carousel img');
+    const totalImages = images.length;
+
+    // Function to show the next image
+    function showNextImage() {
+        images[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % totalImages;
+        images[currentIndex].classList.add('active');
+    }
+
+    // Set up button to go to the next image
+    document.getElementById("nextButton").addEventListener("click", showNextImage);
+</script>
+
+</body>
+</html>
